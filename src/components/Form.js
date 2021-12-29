@@ -1,39 +1,39 @@
 import React, { Component } from "react";
 
+// Font Awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+
 class Formulaire extends Component {
   state = {
     message: "",
     length: this.props.length
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleSubmit = (e) => {
+    e.preventDefault();
+
     this.createMessage();
   };
 
   createMessage = () => {
     const { addMessage, nickname, length } = this.props;
 
-    const message = {
-      nickname,
-      message: this.state.message
-    };
-
-    addMessage(message);
+    addMessage(nickname, this.state.message);
 
     // Reset
     this.setState({ message: "", length });
   };
 
-  handleChange = (event) => {
-    const message = event.target.value; // Obtient la valeur actuel du champs de texte
+  handleChange = (e) => {
+    const message = e.target.value;
     const length = this.props.length - message.length;
 
     this.setState({ message, length });
   };
 
-  handleKeyUp = (event) => {
-    if (event.key === "Enter") {
+  handleKeyUp = (e) => {
+    if (e.key === "Enter") {
       this.createMessage();
     }
   };
@@ -45,15 +45,18 @@ class Formulaire extends Component {
         onSubmit={this.handleSubmit}
         onKeyUp={this.handleKeyUp}
       >
-        <textarea
+        <input
+          type="text"
           require
           maxLength={this.props.length}
           onChange={this.handleChange}
           value={this.state.message}
-          placeholder="Start writing something ..."
+          placeholder="Type a message"
         />
-        <div className="info">{this.state.length}</div>
-        <button type="submit">Send</button>
+        {/* <div className="info">{this.state.length}</div> */}
+        <button type="submit" className="form__submit">
+          <FontAwesomeIcon icon={faPaperPlane} />
+        </button>
       </form>
     );
   }

@@ -8,13 +8,13 @@ class Connection extends Component {
     goToChat: false
   };
 
-  handleChange = (event) => {
-    const { name, value } = event.target;
+  handleChange = (e) => {
+    const { name, value } = e.target;
     this.setState({ [name]: value });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleSubmit = (e) => {
+    e.preventDefault();
     this.setState({ goToChat: true });
   };
 
@@ -47,7 +47,7 @@ class Connection extends Component {
             placeholder="Nickname"
             required
           />
-          <button type="submit">Join</button>
+          <button type="submit" className="button btn-green">Join</button>
         </form>
       </div>
     );
