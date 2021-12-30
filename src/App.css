@@ -2,12 +2,12 @@
 	Typo
 ---------------------------- */
 
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body,
 textarea,
 input {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   overflow: hidden;
 }
 
@@ -30,6 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  margin: 0 1rem;
 }
 .connexion {
   max-width: 500px;
@@ -41,24 +42,9 @@ body {
 .connexion > * {
   width: 100%;
 }
-.connexion > input {
-  box-sizing: border-box;
-  font-size: 24px;
-  padding: 5px;
-  border: 5px solid #41ef90;
-  border-width: 0 0 5px 0;
-  outline: none;
-}
 .box {
   margin: auto;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-wrap: wrap; */
-  /* align-items: flex-end; */
   width: 100%;
-  /* max-width: 50rem; */
-  /* height: calc(100vh - 100px); */
-  /* padding: 20px 0; */
 }
 
 header {
@@ -66,8 +52,6 @@ header {
   background-color: #262626;
   color: white;
   box-shadow: 0px 2rem 2rem rgba(0, 0, 0, 0.2);
-  /* margin-bottom: 5px; */
-  /* padding: 2rem; */
 }
 header h1 {
   margin: 0;
@@ -77,6 +61,8 @@ header h1 {
 .chatbox {
   background-color: #fff;
   padding: 0 2rem;
+  border-radius: 2rem;
+  margin: 0 1rem;
 }
 
 /* ----------------------------
@@ -90,20 +76,15 @@ header h1 {
   text-shadow: 0px 3px 5px rgba(255, 255, 255, 0.2);
 }
 
-/* input:first-of-type {
-  margin: 1rem 0;
-} */
-
 /* ----------------------------
 	MESSAGES
 ---------------------------- */
 
 .messages {
-  flex: 1 1 100%;
-  /*border: 5px solid red;*/
   box-sizing: border-box;
   align-self: flex-end;
   max-height: calc(100vh - 310px);
+  height: 100vh;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
@@ -184,26 +165,39 @@ header h1 {
   border-top: 1px solid #262626;
 }
 
-/* .form > * {
+.form > * {
   width: 100%;
-} */
+}
 
 input {
   flex: 0 0 75%;
   box-sizing: border-box;
-  /* height: 120px; */
   border: 5px solid #41ef90;
   border-width: 0 0 5px 0;
   background-color: #eceff1;
   outline: none;
   font-size: 20px;
-  /* padding: 5px 10px; */
+  border-radius: 2rem;
+  padding: 0 2rem;
+}
+
+.connexion_input {
+  border-radius: 1rem 0;
+  margin: .5rem 0;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 5px solid #41ef90;
+  border-width: 0 0 5px 0;
 }
 
 .info {
   text-align: right;
   padding-right: 5px;
 }
+
+/* ----------------------------
+	BUTTON
+---------------------------- */
 
 .form__submit {
   align-self: center;
@@ -212,7 +206,7 @@ input {
   text-align: center;
   border-radius: 5rem;
   cursor: pointer;
-  margin-left: 1rem;
+  margin-left: 2rem;
   border: none;
   transition: all .2s ease;
 }
@@ -220,17 +214,6 @@ input {
 .form__submit:hover {
   opacity: .6;
 }
-
-/* button {
-  font-size: 20px;
-  border: none;
-  color: white;
-  background-color: #2196f3;
-  margin-top: 10px;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 2px;
-} */
 
 button:disabled {
   background-color: #eceff1;
@@ -283,3 +266,4 @@ button:disabled {
   margin: 0;
   background: #eceff1;
 }
+

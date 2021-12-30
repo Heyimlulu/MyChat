@@ -10,6 +10,7 @@ class Connection extends Component {
 
   handleChange = (e) => {
     const { name, value } = e.target;
+    
     this.setState({ [name]: value });
   };
 
@@ -30,6 +31,7 @@ class Connection extends Component {
         <form className="connexion" onSubmit={this.handleSubmit}>
           <h1 className="connexionTitle">MyChat</h1>
           <input
+            className="connexion_input"
             name="channel"
             value={this.state.channel}
             onChange={this.handleChange}
@@ -39,6 +41,7 @@ class Connection extends Component {
             required
           />
           <input
+            className="connexion_input"
             name="nickname"
             value={this.state.nickname}
             onChange={this.handleChange}

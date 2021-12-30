@@ -67,29 +67,31 @@ class App extends Component {
 
   render() {
     return (
-      <div className="box">
-        <Header channel={this.state.channel} />
-        <div className="chatbox">
-          <div className="messages" ref={this.messageRef}>
-            <TransitionGroup className="message">
-              {this.state.messages.map(({ id, data: { username, msg } }) => (
-                <CSSTransition key={id} timeout={200} classNames="fade">
-                  <Message
-                    nickname={username}
-                    message={msg}
-                    isUser={this.isUser}
-                  />
-                </CSSTransition>
-              ))}
-            </TransitionGroup>
+      <>
+        <div className="box">
+          <Header channel={this.state.channel} />
+          <div className="chatbox">
+            <div className="messages" ref={this.messageRef}>
+              <TransitionGroup className="message">
+                {this.state.messages.map(({ id, data: { username, msg } }) => (
+                  <CSSTransition key={id} timeout={200} classNames="fade">
+                    <Message
+                      nickname={username}
+                      message={msg}
+                      isUser={this.isUser}
+                    />
+                  </CSSTransition>
+                ))}
+              </TransitionGroup>
+            </div>
+            <Form
+              addMessage={this.addMessage}
+              nickname={this.state.nickname}
+              length={140}
+            />
           </div>
-          <Form
-            addMessage={this.addMessage}
-            nickname={this.state.nickname}
-            length={140}
-          />
         </div>
-      </div>
+      </>
     );
   }
 }
